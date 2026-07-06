@@ -15,7 +15,7 @@ while True:
         slot=int(input("Enter Slot Number (0-7) :- "))
         product=input("Enter Product Name :- ")
 
-        if 0<=slot<8:
+        if slot >= 0 and slot < 8:
             if belt[slot] is None:
                 belt[slot]=product
                 print(f"Product {product} added to slot {slot}.")
@@ -43,15 +43,15 @@ while True:
 
         if belt[slot] !=None:
             belt[slot]=new_product
-            print(f"Product Update Successfully.")
+            print(f"Product Update Successfully......")
         else:
             print("Slot Empty")
 
     elif ch==5:
         if None not in belt:
-            print("Belt is full.")
+            print("Belt is full")
         else:
-            print("Belt is not full.")       
+            print("Belt is not full")       
 
     elif ch==6:
         print(belt)

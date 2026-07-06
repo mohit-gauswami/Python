@@ -4,19 +4,19 @@ target = 50000
 
 low = 0
 high = len(prices) - 1
-answer = -1
+index = -1
 
 while low <= high:
     mid = (low + high) // 2
 
     if prices[mid] >= target:
-        answer = mid
+        index = mid
         high = mid - 1
     else:
         low = mid + 1
 
-if answer != -1:
-    print("First Product Price >= 50000 is", prices[answer])
-    print("Index:", answer)
+if index != -1:
+    print("First Product Price >= 50000 is", prices[index])
+    print("Index:", index)
 else:
     print("No Product Found")

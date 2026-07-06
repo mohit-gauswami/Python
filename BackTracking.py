@@ -1,43 +1,9 @@
-back_stack = []
-forward_stack = []
+back = []
+forward= []
 current = "Home"
 
-def visit(place):
-    global current
-
-    back_stack.append(current)
-    current = place
-    forward_stack.clear()
-
-    print("Current Location :", current)
-
-
-def back():
-    global current
-
-    if len(back_stack) == 0:
-        print("No Previous Place")
-    else:
-        forward_stack.append(current)
-        current = back_stack.pop()
-        print("Current Location :", current)
-
-
-def forward():
-    global current
-
-    if len(forward_stack) == 0:
-        print("No Forward Place")
-    else:
-        back_stack.append(current)
-        current = forward_stack.pop()
-        print("Current Location :", current)
-
-
 while True:
-
-    print("\n------ MENU ------")
-    print("1. Visit Place")
+    print("\n1. Visit Place")
     print("2. Go Back")
     print("3. Go Forward")
     print("4. Current Location")
@@ -47,19 +13,36 @@ while True:
 
     if choice == 1:
         place = input("Enter Place Name: ")
-        visit(place)
+
+        back.append(current)
+        current = place
+        forward.clear()
+
+        print("Current Location:", current)
 
     elif choice == 2:
-        back()
+        if back == []:
+            print("No Previous Place")
+        else:
+            forward.append(current)
+            current = back.pop()
+
+            print("Current Location:", current)
 
     elif choice == 3:
-        forward()
+        if forward == []:
+            print("No Forward Place")
+        else:
+            back.append(current)
+            current = forward.pop()
+
+            print("Current Location:", current)
 
     elif choice == 4:
-        print("Current Location :", current)
+        print("Current Location:", current)
 
     elif choice == 5:
-        print("Program End")
+        print("End........!!!")
         break
 
     else:

@@ -10,6 +10,6 @@ for sender in blacklist:
         break
 
 if found:
-    print("Spam Detected")
+    print("Spam Detected..!!!!!!!!!!!")
 else:
-    print("Not Found")
+    print("Not Found.....")
